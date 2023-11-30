@@ -22,9 +22,9 @@ export default async function Home() {
       {/* {results.map((moviebyYear: any) => (
         <div>{moviebyYear.title}</div>
       ))} */}
-      {results.map((moviebyCountry: any) => (
+      {/* {results.map((moviebyCountry: any) => (
         <div>{moviebyCountry.title}</div>
-      ))}
+      ))} */}
     </main>
   );
 }
