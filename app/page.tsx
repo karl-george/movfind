@@ -13,6 +13,7 @@ export default async function Home() {
 
   return (
     <main>
+      Main
       {/* {data.results.map((movie: any) => (
         <div>{movie.title}</div>
       ))} */}
