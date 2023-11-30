@@ -1,9 +1,15 @@
-import { getGenres, getMovies, getMoviesByYearRange } from '@/lib/actions';
+import {
+  getGenres,
+  getMovies,
+  getMoviesByCountry,
+  getMoviesByYearRange,
+} from '@/lib/actions';
 
 export default async function Home() {
   const data = await getMovies();
   const { genres } = await getGenres();
-  const { results } = await getMoviesByYearRange('1990', '2000');
+  // const { results } = await getMoviesByYearRange('1990', '2000');
+  const { results } = await getMoviesByCountry('cn');
 
   return (
     <main>
@@ -16,6 +22,9 @@ export default async function Home() {
       {/* {results.map((moviebyYear: any) => (
         <div>{moviebyYear.title}</div>
       ))} */}
+      {results.map((moviebyCountry: any) => (
+        <div>{moviebyCountry.title}</div>
+      ))}
     </main>
   );
 }
