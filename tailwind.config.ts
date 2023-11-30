@@ -17,8 +17,8 @@ module.exports = {
     },
     extend: {
       colors: {
-        bgDark: '#16161A',
-        bgCard: '#242629',
+        bgDark: 'hsl(var(--background) / 1)',
+        bgCard: 'hsl(var(--bgCard) / 1)',
         textHeadline: '#FFFFFE',
         textParagraph: '#94A1B2',
         accent: '#7F5AF0',
