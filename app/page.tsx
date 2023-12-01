@@ -1,31 +1,22 @@
-import {
-  getGenres,
-  getMovies,
-  getMoviesByCountry,
-  getMoviesByYearRange,
-} from '@/lib/actions';
+import MovieCard from '@/app/components/MovieCard';
+import { getMovies } from '@/lib/actions';
+import { Movie } from '@/type';
 
 export default async function Home() {
-  const data = await getMovies();
-  const { genres } = await getGenres();
-  // const { results } = await getMoviesByYearRange('1990', '2000');
-  const { results } = await getMoviesByCountry('cn');
+  const { results: movies } = await getMovies();
 
   return (
-    <main>
-      Main
-      {/* {data.results.map((movie: any) => (
-        <div>{movie.title}</div>
-      ))} */}
-      {/* {genres.map((genre: any) => (
-        <div>{genre.name}</div>
-      ))} */}
-      {/* {results.map((moviebyYear: any) => (
-        <div>{moviebyYear.title}</div>
-      ))} */}
-      {/* {results.map((moviebyCountry: any) => (
-        <div>{moviebyCountry.title}</div>
-      ))} */}
+    <main className='container mt-28'>
+      {/* Title */}
+      <h1 className='text-textHeadline text-center text-4xl my-12'>
+        Popular Movies
+      </h1>
+      {/* Movies Grid */}
+      <div className='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 lg:gap-8 place-items-center'>
+        {movies.map((movie: Movie) => (
+          <MovieCard movie={movie} />
+        ))}
+      </div>
     </main>
   );
 }
