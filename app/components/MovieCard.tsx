@@ -7,13 +7,13 @@ interface MovieCardProps {
 
 function MovieCard({ movie }: MovieCardProps) {
   return (
-    <div key={movie.id} className='relative'>
+    <div key={movie.id} className='relative '>
       <Image
         width={360}
         height={550}
         src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
         alt={movie.title}
-        className='object-contain'
+        className='object-contain rounded-2xl'
       />
     </div>
   );
