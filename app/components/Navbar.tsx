@@ -8,8 +8,8 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
-import Search from '@/components/Search';
-import AuthLinks from '@/components/AuthLinks';
+import Search from '@/app/components/Search';
+import AuthLinks from '@/app/components/AuthLinks';
 import { countries, years } from '@/lib/data';
 import { ChevronDown } from 'lucide-react';
 
@@ -19,7 +19,7 @@ async function Navbar({}: NavbarProps) {
   const { genres } = await getGenres();
 
   return (
-    <header className='bg-[#131313] w-full'>
+    <header className='bg-[#131313] w-full fixed z-50 top-0 left-0'>
       <nav className='flex justify-between items-center container py-3'>
         {/* Logo */}
         <div>

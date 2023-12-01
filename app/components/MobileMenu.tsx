@@ -1,13 +1,13 @@
 import Link from 'next/link';
 import { ChevronDown, Menu } from 'lucide-react';
-import { Sheet, SheetContent, SheetTrigger } from './ui/sheet';
+import { Sheet, SheetContent, SheetTrigger } from '../../components/ui/sheet';
 import Search from './Search';
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
-} from './ui/dropdown-menu';
+} from '../../components/ui/dropdown-menu';
 import { getGenres } from '@/lib/actions';
 import { Genre } from '@/type';
 import {
@@ -15,7 +15,7 @@ import {
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
-} from './ui/accordion';
+} from '../../components/ui/accordion';
 import { countries, years } from '@/lib/data';
 
 interface MobileMenuProps {
