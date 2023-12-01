@@ -8,6 +8,8 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
+import Search from '@/components/Search';
+import AuthLinks from '@/components/AuthLinks';
 
 interface NavbarProps {}
 
@@ -30,13 +32,13 @@ async function Navbar({}: NavbarProps) {
         </div>
         {/* Navbar dropdown for genre country year */}
         <div>
-          <ul className='flex justify-center items-center gap-12 text-textParagraph text-lg'>
+          <ul className='hidden md:flex justify-center items-center gap-12 text-textParagraph text-lg'>
             <li>
               <DropdownMenu>
-                <DropdownMenuTrigger className='border-none focus:none'>
+                <DropdownMenuTrigger className='border-none focus:none outline-none'>
                   Genre
                 </DropdownMenuTrigger>
-                <DropdownMenuContent className='w-96 flex flex-row flex-wrap  gap-4'>
+                <DropdownMenuContent className='w-96 grid grid-cols-3 gap-3'>
                   {genres.map((genre: Genre) => (
                     <DropdownMenuItem key={genre.id}>
                       <Link
@@ -50,15 +52,34 @@ async function Navbar({}: NavbarProps) {
                 </DropdownMenuContent>
               </DropdownMenu>
             </li>
-            <li>Year</li>
+            <li>
+              <DropdownMenu>
+                <DropdownMenuTrigger className='border-none focus:none outline-none'>
+                  Year
+                </DropdownMenuTrigger>
+                <DropdownMenuContent className='w-96 grid grid-cols-3 gap-3'>
+                  {genres.map((genre: Genre) => (
+                    <DropdownMenuItem key={genre.id}>
+                      <Link
+                        href={'#'}
+                        className='text-textParagraph hover:text-textHeadline text-base'
+                      >
+                        {genre.name}
+                      </Link>
+                    </DropdownMenuItem>
+                  ))}
+                </DropdownMenuContent>
+              </DropdownMenu>
+            </li>
             <li>Country</li>
           </ul>
         </div>
         {/* Search Login */}
-        <div className='text-textParagraph'>
-          Search Login
+        <div className='text-textParagraph hidden md:flex'>
           {/* Search */}
+          <Search />
           {/* Login */}
+          <AuthLinks />
         </div>
       </nav>
     </header>
