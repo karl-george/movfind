@@ -34,7 +34,7 @@ async function Navbar({}: NavbarProps) {
         </div>
         {/* Navbar dropdown for genre country year */}
         <div>
-          <ul className='hidden md:flex justify-center items-center gap-12 text-textParagraph text-lg'>
+          <ul className='hidden lg:flex justify-center items-center gap-12 text-textParagraph text-lg'>
             {/* Genre */}
             <li>
               <DropdownMenu>
@@ -98,9 +98,11 @@ async function Navbar({}: NavbarProps) {
           </ul>
         </div>
         {/* Search Login */}
-        <div className='text-textParagraph hidden md:flex'>
+        <div className='text-textParagraph flex items-center justify-center'>
           {/* Search */}
-          <Search />
+          <div className='hidden lg:block'>
+            <Search />
+          </div>
           {/* Login */}
           <AuthLinks />
         </div>
