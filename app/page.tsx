@@ -1,9 +1,9 @@
-import MovieCard from '@/app/components/MovieCard';
 import { getMovies } from '@/lib/actions';
-import { Movie } from '@/type';
+import LoadMore from '../components/LoadMore';
+import MovieCard, { MovieProp } from '@/components/MovieCard';
 
 export default async function Home() {
-  const { results: movies } = await getMovies();
+  const { results: movies } = await getMovies(1);
 
   return (
     <main className='container mt-28'>
@@ -13,10 +13,11 @@ export default async function Home() {
       </h1>
       {/* Movies Grid */}
       <div className='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 lg:gap-6 place-items-center'>
-        {movies.map((movie: Movie) => (
-          <MovieCard movie={movie} />
+        {movies.map((movie: MovieProp, index: number) => (
+          <MovieCard key={movie.id} movie={movie} index={index} />
         ))}
       </div>
+      <LoadMore />
     </main>
   );
 }

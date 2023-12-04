@@ -1,6 +1,8 @@
 'use server';
 
-export const getMovies = async () => {
+import MovieCard, { MovieProp } from '@/components/MovieCard';
+
+export const getMovies = async (page: number) => {
   const options = {
     method: 'GET',
     headers: {
@@ -11,7 +13,7 @@ export const getMovies = async () => {
 
   try {
     const response = await fetch(
-      'https://api.themoviedb.org/3/movie/popular?language=en-US&page=1',
+      `https://api.themoviedb.org/3/movie/popular?language=en-US&page=${page}`,
       options
     );
 
@@ -20,6 +22,29 @@ export const getMovies = async () => {
   } catch (error) {
     console.log(error);
     throw new Error('Failed to fetch movies');
+  }
+};
+
+export const getMovieById = async (id: string) => {
+  const options = {
+    method: 'GET',
+    headers: {
+      accept: 'application/json',
+      Authorization: `Bearer ${process.env.MOVIE_API_KEY}`,
+    },
+  };
+
+  try {
+    const response = await fetch(
+      `https://api.themoviedb.org/3/movie/${id}?language=en-US`,
+      options
+    );
+
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    console.log(error);
+    throw new Error('Failed to fetch movie');
   }
 };
 

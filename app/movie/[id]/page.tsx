@@ -1,13 +1,12 @@
-import { Movie } from '@/type';
+import { getMovieById } from '@/lib/actions';
 import Image from 'next/image';
 
-interface MovieCardProps {
-  movie: Movie;
-}
+async function page({ params }: { params: { id: string } }) {
+  const { id } = params;
 
-function MovieCard({ movie }: MovieCardProps) {
+  const movie = await getMovieById(id);
   return (
-    <div key={movie.id} className='relative '>
+    <div>
       <Image
         width={360}
         height={550}
@@ -15,8 +14,9 @@ function MovieCard({ movie }: MovieCardProps) {
         alt={movie.title}
         className='object-contain rounded-2xl'
       />
+      {movie.title}
     </div>
   );
 }
 
-export default MovieCard;
+export default page;

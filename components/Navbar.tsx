@@ -8,8 +8,8 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
-import Search from '@/app/components/Search';
-import AuthLinks from '@/app/components/AuthLinks';
+import Search from '@/components/Search';
+import AuthLinks from '@/components/AuthLinks';
 import { countries, years } from '@/lib/data';
 import { ChevronDown } from 'lucide-react';
 
