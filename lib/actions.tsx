@@ -150,3 +150,28 @@ export const getGenres = async () => {
     throw new Error('Failed to fetch genres');
   }
 };
+
+export const searchMovies = async (title: string) => {
+  const options = {
+    method: 'GET',
+    headers: {
+      accept: 'application/json',
+      Authorization: `Bearer ${process.env.MOVIE_API_KEY}`,
+    },
+  };
+
+  try {
+    const response = await fetch(
+      `https://api.themoviedb.org/3/search/movie?query=${title}&include_adult=false&language=en-US&page=1`,
+      options
+    );
+
+    const data = await response.json();
+    return data.results.map((item: MovieProp, index: number) => (
+      <MovieCard key={item.id} movie={item} index={index} />
+    ));
+  } catch (error) {
+    console.log(error);
+    throw new Error('Failed to fetch movie');
+  }
+};
