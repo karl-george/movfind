@@ -19,7 +19,7 @@ async function page({ params }: { params: { id: string } }) {
         />
       </div>
       {/* Movie Details */}
-      <div className='flex justify-center items-center my-32 md:my-20 flex-col lg:flex-row gap-12'>
+      <div className='flex justify-center items-center my-32 md:my-20 flex-col lg:flex-row gap-12 container'>
         <Image
           width={360}
           height={550}
