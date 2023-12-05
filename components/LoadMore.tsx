@@ -8,6 +8,8 @@ import Image from 'next/image';
 
 let page = 2;
 
+export type MovieCard = JSX.Element;
+
 function LoadMore() {
   const [data, setData] = useState<MovieCard[]>([]);
   const { ref, inView } = useInView({});
@@ -15,7 +17,7 @@ function LoadMore() {
   useEffect(() => {
     if (inView) {
       getMovies(page).then((data) => {
-        setData((prevData) => [...prevData, ...data.results]);
+        setData((prevData) => [...prevData, ...data]);
         page++;
       });
     }
@@ -24,9 +26,7 @@ function LoadMore() {
   return (
     <div>
       <div className='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 lg:gap-6 place-items-center'>
-        {data.map((movie: MovieProp, index: number) => (
-          <MovieCard key={movie.id} movie={movie} index={index} />
-        ))}
+        {data}
       </div>
       <section>
         <div ref={ref}>
