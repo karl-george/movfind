@@ -11,7 +11,7 @@ export default async function Home() {
         Popular Movies
       </h1>
       {/* Movies Grid */}
-      <div className='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 lg:gap-6 place-items-center'>
+      <div className='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 lg:gap-6 place-items-center'>
         {data}
       </div>
       <LoadMore />

@@ -25,7 +25,7 @@ function LoadMore() {
 
   return (
     <div>
-      <div className='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 lg:gap-6 place-items-center'>
+      <div className='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 lg:gap-6 place-items-center'>
         {data}
       </div>
       <section>
