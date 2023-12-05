@@ -102,7 +102,7 @@ async function Navbar({}: NavbarProps) {
           </ul>
         </div>
         {/* Search Login */}
-        <div className='text-textParagraph flex items-center justify-center'>
+        <div className='text-textParagraph flex items-center justify-center gap-4'>
           {/* Search */}
           <div className='hidden lg:block'>
             <Search />
