@@ -50,6 +50,31 @@ export const getMovieById = async (id: string) => {
   }
 };
 
+export const getRecommendations = async (id: string) => {
+  const options = {
+    method: 'GET',
+    headers: {
+      accept: 'application/json',
+      Authorization: `Bearer ${process.env.MOVIE_API_KEY}`,
+    },
+  };
+
+  try {
+    const response = await fetch(
+      `https://api.themoviedb.org/3/movie/${id}/recommendations?language=en-US&page=1`,
+      options
+    );
+
+    const data = await response.json();
+    return data.results.map((item: MovieProp, index: number) => (
+      <MovieCard key={item.id} movie={item} index={index} />
+    ));
+  } catch (error) {
+    console.log(error);
+    throw new Error('Failed to fetch recommendations');
+  }
+};
+
 export const getMoviesByYearRange = async (
   yearStart: string,
   yearEnd: string
