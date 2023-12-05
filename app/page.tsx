@@ -1,6 +1,5 @@
 import { getMovies } from '@/lib/actions';
 import LoadMore from '../components/LoadMore';
-import MovieCard, { MovieProp } from '@/components/MovieCard';
 
 export default async function Home() {
   const data = await getMovies(1);
