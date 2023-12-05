@@ -9,14 +9,8 @@ import {
   DropdownMenuTrigger,
 } from './ui/dropdown-menu';
 import { getGenres } from '@/lib/actions';
-import { Genre } from '@/type';
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from './ui/accordion';
 import { countries, years } from '@/lib/data';
+import { Genre } from './Navbar';
 
 interface MobileMenuProps {
   status: string;

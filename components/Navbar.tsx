@@ -1,6 +1,5 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import { Genre } from '@/type';
 import { getGenres } from '@/lib/actions';
 import {
   DropdownMenu,
@@ -12,6 +11,11 @@ import Search from '@/components/Search';
 import AuthLinks from '@/components/AuthLinks';
 import { countries, years } from '@/lib/data';
 import { ChevronDown } from 'lucide-react';
+
+export interface Genre {
+  id: number;
+  name: string;
+}
 
 interface NavbarProps {}
 
