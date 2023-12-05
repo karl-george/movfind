@@ -61,7 +61,7 @@ export const getRecommendations = async (id: string) => {
 
   try {
     const response = await fetch(
-      `https://api.themoviedb.org/3/movie/${id}/recommendations?language=en-US&page=1`,
+      `https://api.themoviedb.org/3/movie/${id}/similar?language=en-US&page=1`,
       options
     );
 
