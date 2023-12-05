@@ -47,7 +47,6 @@ function MovieCard({ movie, index }: MovieCardProps) {
             alt={movie.title}
             className='object-contain rounded-2xl'
           />
-          <p className='text-white'>{index}</p>
         </Link>
       </div>
     </MotionDiv>
