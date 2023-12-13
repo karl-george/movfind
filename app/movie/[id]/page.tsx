@@ -1,4 +1,4 @@
-import { getMovieById, getRecommendations } from '@/lib/actions';
+import { getMovieById, getRecommendations } from '@/app/lib/actions';
 import Image from 'next/image';
 
 async function page({ params }: { params: { id: string } }) {

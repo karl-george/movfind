@@ -1,4 +1,4 @@
-import { searchMovies } from '@/lib/actions';
+import { searchMovies } from '@/app/lib/actions';
 
 interface pageProps {}
 
