@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import { useInView } from 'react-intersection-observer';
-import { getMovies } from '@/lib/actions';
+import { getMovies } from '@/app/lib/actions';
 import MovieCard, { MovieProp } from './MovieCard';
 import Image from 'next/image';
 

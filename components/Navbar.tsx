@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import { getGenres } from '@/lib/actions';
+import { getGenres } from '@/app/lib/actions';
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -9,7 +9,7 @@ import {
 } from '@/components/ui/dropdown-menu';
 import Search from '@/components/Search';
 import AuthLinks from '@/components/AuthLinks';
-import { countries, years } from '@/lib/data';
+import { countries, years } from '@/app/lib/data';
 import { ChevronDown } from 'lucide-react';
 
 export interface Genre {

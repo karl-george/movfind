@@ -8,8 +8,8 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from './ui/dropdown-menu';
-import { getGenres } from '@/lib/actions';
-import { countries, years } from '@/lib/data';
+import { getGenres } from '@/app/lib/actions';
+import { countries, years } from '@/app/lib/data';
 import { Genre } from './Navbar';
 
 interface MobileMenuProps {
