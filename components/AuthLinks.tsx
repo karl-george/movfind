@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import MobileMenu from './MobileMenu';
 
 interface AuthLinksProps {}
@@ -7,7 +8,9 @@ function AuthLinks({}: AuthLinksProps) {
   return (
     <div>
       {status === 'unauthenticated' ? (
-        <div className='max-lg:hidden lg:block'>Login</div>
+        <Link href={'/login'} className='max-lg:hidden lg:block'>
+          Login
+        </Link>
       ) : (
         <div className='max-lg:hidden lg:block cursor-pointer'>Avatar</div>
       )}
