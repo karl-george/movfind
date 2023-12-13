@@ -1,4 +1,4 @@
-import { getMovies } from '@/lib/actions';
+import { getMovies } from '@/app/lib/actions';
 import LoadMore from '../components/LoadMore';
 
 export default async function Home() {
